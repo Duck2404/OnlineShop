@@ -1,0 +1,236 @@
+doctype html
+html
+    head
+        //metadata
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='aStore Online')
+        meta(name='author', content='aStore. All rights Reserved')
+        //title
+        title= title + ' | E-commerce'
+        //stylesheet
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/css/main.css')
+        link(rel='stylesheet', href='/css/responsive.css')
+        //favicon
+        link(rel='shortcut icon', href='/img/ico/favicon.ico')
+        link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/img/ico/apple-touch-icon-144-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/img/ico/apple-touch-icon-114-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/ico/apple-touch-icon-72-precomposed.png')
+        link(rel='apple-touch-icon-precomposed', href='/img/ico/apple-touch-icon-57-precomposed.png')
+    body
+        //header
+        header#header
+            //header_top
+            .header_top
+                .container
+                    .row
+                        .col-sm-6
+                            .contactinfo
+                                ul.nav.nav-pills
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-phone
+                                            |  0969036282
+                                    li
+                                        a(href='mailto:www.itsourcecode.com')
+                                            i.fa.fa-envelope
+                                            |  duc2404hn@gmail.com
+                        .col-sm-6
+                            .shop-menu.pull-right
+                                ul.nav.navbar-nav
+                                    -var orderCus = 'Account'
+                                    -var link = '/sign-in'
+                                    if customer
+                                        -orderCus=customer.FullName
+                                        -link='/usr/'
+                                    li
+                                        a(href=link)
+                                            i.fa.fa-user
+                                            =orderCus
+                                    li
+                                        a(href='/cart')
+                                            i.fa.fa-shopping-cart
+                                            |  Giỏ hàng
+                                    //li
+                                    //    a(href='/checkout')
+                                    //        i.fa.fa-money
+                                    //        |  Checkout
+                                    if customer
+                                        li
+                                            a(href='/sign-out')
+                                                i.fa.fa-sign-out
+                                                |  Đăng xuất
+            ///header_top
+
+            //header-middle
+            .header-middle
+                .container
+                    .row
+                        .col-sm-4
+                            .logo.pull-left
+                                a(href='/')
+                                    img(src='/img/ecommerce.png', alt='ecommerce Logo')
+                                    //h1
+                                        span a
+                                        | Store
+                                        i.fa.fa-shopping-cart
+                        .col-sm-8
+
+            ///header-middle
+
+            //header-bottom
+            .header-bottom
+                .container
+                    .row
+                        .col-sm-9
+                            .navbar-header
+                                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                                    span.sr-only Chuyển đổi thành
+                                    span.icon-bar
+                                    span.icon-bar
+                                    span.icon-bar
+                            .mainmenu.pull-left
+                                ul.nav.navbar-nav.collapse.navbar-collapse
+                                    li
+                                        a(class={active: currentUrl === '/'}, href='/')
+                                            | Trang chủ
+                                    li
+                                        a(class={active: currentUrl === '/cat/all'}, href='/cat/all')
+                                            | Sản phẩm
+                                    li.dropdown
+                                        a(class={active: currentUrl === '/services'}, href='/services')
+                                            | Dịch vụ
+                                            i.fa.fa-angle-down
+                                        ul.sub-menu(role='menu')
+                                            li
+                                                a(href='/services/shipment') Lô hàng
+                                            li
+                                                a(href='/services/return') Chính sách đổi trả
+                                            li
+                                                a(href='/services/payment') Chi trả
+                                                a(href='/services/vouchers') Ưu đãi
+                                    li.dropdown
+                                        a(class={active: currentUrl === '/press'}, href='/press')
+                                            | Nhấn
+                                            i.fa.fa-angle-down
+                                        ul.sub-menu(role='menu')
+                                            li
+                                                a(href='/press/careers') Nghề nghiệp
+                                            li
+                                                a(href='/press/partners') Đối tác
+                                            li
+                                                a(href='/press/privacy-terms') Điều khoản bảo mật
+                                            li
+                                                a(href='/press/about-us') Về chúng tôi
+                                    li
+                                        a(class={active: currentUrl === '/contact-us'}, href='/contact-us') Thông tin liên hệ
+                        .col-sm-3
+                            .search_box.pull-right
+                                input(type='text', placeholder='Search')
+            ///header-bottom
+        ///header
+  
+        block content
+
+        //Footer
+        footer#footer
+            //.footer-top
+            //    .container
+            //        .row
+            //            .col-sm-3
+            //                .single-promo.promo1
+            //                    i.fa.fa-refresh
+            //                    p 30 Days return
+            //            .col-sm-3
+            //                .single-promo.promo2
+            //                    i.fa.fa-truck
+            //                    p Free shipping
+            //            .col-sm-3
+            //                .single-promo.promo3
+            //                    i.fa.fa-lock
+            //                    p Secure payments
+            //            .col-sm-3
+            //                .single-promo.promo4
+            //                    i.fa.fa-gift
+            //                    p Surprising Gift
+            .footer-widget
+                .container
+                    .row
+                        .col-sm-2
+                            .companyinfo
+                                h2
+                                    span E
+                                    | Cửa hàng thương mại
+                                p
+                                    | Trang web bán hàng online thương mại điện tử
+                                    | luôn luôn uy tín và dồng hành cùng các bạn
+                                    | và hãy luôn tin tưởng chúng tôi.
+                        .col-sm-2
+                            .single-widget
+                                h2 Phương tiện truyền thông
+                                ul.nav.nav-pills.nav-stacked
+                                    li
+                                        a(href='https://www.facebook.com/gduckchoat/')
+                                            i.fa.fa-facebook
+                                            | Facebook
+                                    li
+                                        a(href='https://twitter.com/?lang=vi')
+                                            i.fa.fa-twitter
+                                            | Twitter
+                                    li
+                                        a(href='https://www.instagram.com/')
+                                            i.fa.fa-instagram
+                                            | Instagram
+                                    li
+                                        a(href='https://www.youtube.com/')
+                                            i.fa.fa-youtube
+                                            | Youtube
+                        .col-sm-2
+                            .single-widget
+                                h2 Nhấn
+                                ul.nav.nav-pills.nav-stacked
+                                    li
+                                        a(href='/press/careers') Nghề nghiệp
+                                    li
+                                        a(href='/press/partners') Đối tác
+                                    li
+                                        a(href='/press/privacy') Điều khoản bảo mật
+                                    li
+                                        a(href='/press/about') Giới thiệu về trang web thuong mại
+                        .col-sm-2
+                            .single-widget
+                                h2 Dịch vụ
+                                ul.nav.nav-pills.nav-stacked
+                                    li
+                                        a(href='/services/shipment') Lô hàng
+                                    li
+                                        a(href='/services/return') Chính sách đổi trả
+                                    li
+                                        a(href='/services/payment') Chi trả
+                                    li
+                                        a(href='/services/voucher') Ưu đãi
+                        .col-sm-3.col-sm-offset-1
+                            .single-widget
+                                h2 Tin tức
+                                form.searchform(action='/subscribe', method='POST')
+                                    input(type='text', name='email', placeholder='Your email address')
+                                    button.btn.btn-default(type='submit')
+                                        i.fa.fa-arrow-circle-o-right
+                                    p
+                                        | Các bản cập nhật mới nhất,giao dịch độc quyền
+                                        | Bạn sẽ không tìm thấy nới nào uy tín như chúng tôi
+                                        | Hay liên hệ chúng tôi để biết thêm chi tiết...
+            .footer-bottom
+                .container
+                    .row
+                        p.pull-left &copy 2022 Ecommerce Website. All rights reserved.
+                        p.pull-right= 'Nguyen Minh Duc '
+                            span
+                                a(target='_blank', href='#') Economerce Website
+        ///Footer
+        script(src='/js/jquery-2.1.4.min.js')
+        script(src='/js/bootstrap.min.js')
+        script(src='/js/jquery.scrollUp.min.js')
+        script(src='/js/main.js')

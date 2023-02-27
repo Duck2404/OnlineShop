@@ -1,0 +1,15 @@
+extends admin
+
+block details
+    form(id='addCat', action='/admin/cat/add', method='POST')
+        label(for='name') Tên danh mục
+        br
+        input(type='text', id='name', name='name', placeholder='Category Name', required=true)
+        br
+        label(for='description') Miêu tả
+        textarea(id='description', name='description', required=true) Danh mục mô tả
+        br
+        label(for='image') Danh mục hình ảnh
+        input(type='file', id='image', name='image' required=true)
+        br
+        button.dev-btn.btn.btn-default(type='submit') Gửi

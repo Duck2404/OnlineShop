@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+    section
+        .container
+            .row
+                h2.title.text-center
+                    =title
+                //title here. no duplicate
+                //if navList
+                .col-sm-3
+                    // nav-bar
+                    .left-sidebar
+                        #accordian.panel-group.category-products
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href='/usr/' + customer.Username) Thông tin cá nhân
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href='/usr/' + customer.Username + '/orders') Đơn hàng
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href='/usr/' + customer.Username + '/addresses') Địa chỉ giao hàng
+                    ///nav-bar
+                .col-sm-9
+                    .blog-post-area
+                        .single-blog-post
+                            block details

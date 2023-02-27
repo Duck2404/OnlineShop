@@ -1,0 +1,58 @@
+extends layout
+
+block content
+    
+    #contact-page.container
+        .bg
+            .row
+                .col-sm-12
+                    h2.title.text-center
+                        | Liên hệ
+                        strong= ' Us'
+            .row
+                .col-sm-8
+                    .contact-form
+                        h2.title.text-center Liên lạc
+                        .status.alert.alert-success(style='display: none')
+                        form#main-contact-form.contact-form.row(action='/contact-us', method='POST')
+                            if customer
+                                .form-group.col-md-6
+                                    input.form-control(type='text', name='fullName', value=customer.FullName, required='required', placeholder='Name', disabled)
+                                .form-group.col-md-6
+                                    input.form-control(type='email', name='email', value= customer.Email, required='required', placeholder='Email', disabled)
+                            else
+                                .form-group.col-md-6
+                                    input.form-control(type='text', name='fullName', required='required', placeholder='Name')
+                                .form-group.col-md-6
+                                    input.form-control(type='email', name='email', required='required', placeholder='Email')
+                            .form-group.col-md-12
+                                input.form-control(type='text', name='subject', required='required', placeholder='Subject')
+                            .form-group.col-md-12
+                                textarea#message.form-control(name='contactMessage', required='required', rows='8', placeholder='Your Message Here')
+                            .form-group.col-md-12
+                                input.btn.btn-primary.pull-right(type='submit', name='submit', value='Submit')
+                .col-sm-4
+                    .contact-info
+                        h2.title.text-center Thông tin liên hệ
+                        address
+                            p Website bán hàng online.
+                            p Nguyen Minh Duc
+                            p Ha Noi,Viet Nam
+                            p Mobile: 0969036282
+                            p Fax:  555-123-4567
+                            p Email: duc2404hn@gmail.com
+                        .social-networks
+                            h2.title.text-center Mạng xã hội
+                            ul
+                                li
+                                    a(href='https://www.facebook.com/gduckchoat/')
+                                        i.fa.fa-facebook
+                                li
+                                    a(href='https://twitter.com/?lang=vi')
+                                        i.fa.fa-twitter
+                                li
+                                    a(href='https://www.instagram.com/')
+                                        i.fa.fa-instagram
+                                li
+                                    a(href='https://www.youtube.com/')
+                                        i.fa.fa-youtube

@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    section#form
+        //form
+        .container
+            .row
+                .col-sm-3
+                    // nav-bar
+                    .left-sidebar
+                        #accordian.panel-group.category-products
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href='/sign-in') Đăng Nhập
+                            .panel.panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href='/sign-up') Đăng ký
+                .col-sm-4.text-center
+                    //login form
+                    .login-form
+                        h2 Đăng nhập vào tài khoản của bạn
+                        if checkOutNoti
+                            if (signInError != '')
+                                p=signInError
+                            else
+                                p=checkOutNoti
+                        else
+                            if (signInError != '')
+                                p=signInError
+
+                        form(id='sign-in', action='/sign-in', method='POST')
+                            input(type='text', name='username', placeholder='Username')
+                            input(type='password', name='password', placeholder='Password')
+                            //
+                              <span>
+                              <input type="checkbox" class="checkbox">
+                              Keep me signed in
+                              </span>
+                            button.btn.btn-default(type='submit') Đăng nhập
+                    ///login form
+    ///form
